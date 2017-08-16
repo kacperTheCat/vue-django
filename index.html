@@ -254,11 +254,29 @@
 <h2 id="quickstart">Quickstart</h2>
 <p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
 <pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
+$ vue init NdagiStanley/vue-django my-project
 $ <span class="hljs-built_in">cd</span> my-project
 $ npm install
 $ npm run dev
 </code></pre>
+<h4>Deploy with Django</h4>
+<p>Ensure python and pip is installed</p>
+<pre><code class="lang-bash">$ npm run build
+$ pip install -r requirements.txt
+$ python format_index_html.py
+$ python manage.py collectstatic --noinput
+$ python manage.py runserver
+</code></pre>
+<p>Open the app <a href="localhost:8000" target="_blank">here</a></p>
+
+<h4>Deploy with Docker</h4>
+<p>Ensure that docker is running.</p>
+<p>If you use docker in your workflow, there is a Dockerfile in the root directory for you. Simply run:</p>
+<pre><code class="lang-bash">
+    $ docker build -t [image-name] .
+    $ docker run [image-name]
+</code></pre>
+<p>Open the app <a href="localhost:8000" target="_blank">here</a></p>
 
                     
                     </section>
